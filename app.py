@@ -13,7 +13,7 @@ app = cdk.App()
 
 NetworkStack = CdkNetworkStack(app, "CdkNetworkStack")
 
-CdkLabWebServerStack(app, "CdkWebServerStack", cdk_vpc = NetworkStack.cdk_vpc
+CdkWebServerStack(app, "CdkWebServerStack", cdk_vpc = NetworkStack.cdk_vpc
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.

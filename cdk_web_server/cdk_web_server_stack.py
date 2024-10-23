@@ -1,6 +1,7 @@
 import os.path
 
-from aws_cdk.aws_s3_assets import Asset as aws_s3_asset
+from aws_cdk.aws_s3_assets import Asset as S3asset
+
 
 from aws_cdk import (
     # Duration,
@@ -10,6 +11,8 @@ from aws_cdk import (
     # aws_sqs as sqs,
 )
 from constructs import Construct
+
+dirname = os.path.dirname(__file__)
 
 class CdkWebServerStack(Stack):
 

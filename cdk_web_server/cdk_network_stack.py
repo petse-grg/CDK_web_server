@@ -12,8 +12,6 @@ from aws_cdk import (
 
 from constructs import Construct
 
-dirname = os.path.dirname(__file__)
-
 class CdkNetworkStack(Stack):
 
     @property
@@ -29,12 +27,12 @@ class CdkNetworkStack(Stack):
                             ip_addresses=ec2.IpAddresses.cidr("10.0.0.0/16"),
                             subnet_configuration=[
                                 ec2.SubnetConfiguration(
-                                    name="PublicSubnet01",
-                                    subnet_type=ec2.SubnetType.PUBLIC)
-                                #     ),
-                                # ec2.SubnetConfiguration(
-                                #     name="PrivateSubnet01",
-                                #     subnet_type=ec2.SubnetType.PRIVATE_ISOLATED
-                                #     )
+                                    name="Public",
+                                    subnet_type=ec2.SubnetType.PUBLIC
+                                    ),
+                                ec2.SubnetConfiguration(
+                                    name="Private",
+                                    subnet_type=ec2.SubnetType.PRIVATE_ISOLATED
+                                    )
                             ]
         )
